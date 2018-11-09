@@ -27,11 +27,7 @@ var macchineParcheggiateSchema = mongoose.Schema({
 var macchineParcheggiateModel = mongoose.model('macchineParcheggiate', macchineParcheggiateSchema);
 
 var app = express();
-app.use(function (req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    express.json();
-});
+app.use(express.json());
 
 app.post('/arrivoMacchina', function (req, res) {
     console.log('arrivoMacchina: Targa ricevuta -> ', req.body);
