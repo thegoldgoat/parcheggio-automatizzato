@@ -24,5 +24,5 @@ server/uscitaMacchina -> JSON
 {
   dataoraIngresso: tempo1,
   dataoraUscita: tempo2,
-  costo: eur
+  costo_totale: eur
 }
