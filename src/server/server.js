@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
     express.json();
 });
 
-app.post('/arrivoMacchina', function (req, res) {
+app.post('/arrivoMacchina', function (req, res, next) {
     console.log('arrivoMacchina: Targa ricevuta -> ', req.body);
     if (!req.body.id_parcheggio || !req.body.targa) {
         console.log('Pacchetto inviato non valido.');
@@ -71,7 +71,7 @@ app.post('/arrivoMacchina', function (req, res) {
     });
 });
 
-app.post('/uscitaMacchina', function (req, res) {
+app.post('/uscitaMacchina', function (req, res, next) {
     console.log('uscitaMacchina: Targa ricevuta -> ', req.body);
     if (!req.body.id_parcheggio || !req.body.targa) {
         console.log('Pacchetto inviato non valido.');
