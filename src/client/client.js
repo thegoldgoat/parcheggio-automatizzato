@@ -35,7 +35,10 @@ function UscitaMacchina()
             if(xhr.status == 200)
                 alert(JSON.stringify(data));
         },
-        error: alert("Targa rifiutata")
+        error: function(xhr) {
+            if(xhr.status != 200)
+                alert("Targa rifiutata");
+        }
     });
     $('form[name="formUscita"]').trigger("reset");
 }
