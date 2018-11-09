@@ -9,10 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" id="form">
+    <label>ARRIVO</label>
+    <form method="POST" name="formArrivo">
         <input type="number" name="id_parcheggio" placeholder="ID parcheggio">
         <input type="text" name="targa" placeholder="Targa">
         <button onclick="AggiungiMacchina(); return false;">Conferma</button>
+    </form>
+    <br>
+    <label>USCITA</label>
+    <form method="POST" name="formUscita">
+        <input type="number" name="id_parcheggio" placeholder="ID parcheggio">
+        <input type="text" name="targa" placeholder="Targa">
+        <button onclick="UscitaMacchina(); return false;">Conferma</button>
     </form>
 </body>
 </html>
