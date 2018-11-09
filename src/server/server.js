@@ -27,14 +27,13 @@ var macchineParcheggiateSchema = mongoose.Schema({
 var macchineParcheggiateModel = mongoose.model('macchineParcheggiate', macchineParcheggiateSchema);
 
 var app = express();
-app.use(function (req, res, next) {
+app.use(function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
     express.json();
 });
 
-app.post('/arrivoMacchina', function (req, res, next) {
+app.post('/arrivoMacchina', function (req, res) {
     console.log('arrivoMacchina: Targa ricevuta -> ', req.body);
     if (!req.body.id_parcheggio || !req.body.targa) {
         console.log('Pacchetto inviato non valido.');
@@ -71,7 +70,7 @@ app.post('/arrivoMacchina', function (req, res, next) {
     });
 });
 
-app.post('/uscitaMacchina', function (req, res, next) {
+app.post('/uscitaMacchina', function (req, res) {
     console.log('uscitaMacchina: Targa ricevuta -> ', req.body);
     if (!req.body.id_parcheggio || !req.body.targa) {
         console.log('Pacchetto inviato non valido.');
