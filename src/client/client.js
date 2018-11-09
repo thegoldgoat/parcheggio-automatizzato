@@ -34,9 +34,8 @@ function UscitaMacchina()
         success: function(data, statusText, xhr) {
             if(xhr.status == 200)
                 alert(JSON.stringify(data));
-            else
-                alert("Targa rifiutata");
-        }
+        },
+        error: alert("Targa rifiutata")
     });
     $('form[name="formUscita"]').trigger("reset");
 }
