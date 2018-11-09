@@ -1,0 +1,22 @@
+{
+  "name": "parcheggio-automatizzato",
+  "version": "1.0.0",
+  "description": "parcheggio automatizzato. server nodejs e client python",
+  "main": "src/server/server.js",
+  "scripts": {
+    "test": "node src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegoldgoat/parcheggio-automatizzato.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thegoldgoat/parcheggio-automatizzato/issues"
+  },
+  "homepage": "https://github.com/thegoldgoat/parcheggio-automatizzato#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
