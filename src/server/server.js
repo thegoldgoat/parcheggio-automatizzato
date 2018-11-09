@@ -92,7 +92,7 @@ app.post('/uscitaMacchina', function (req, res) {
             return;
         }
 
-        var orePermanenza = Math.ceil((timestampUscita - timestampArrivo) / 3600000);
+        var orePermanenza = Math.ceil((timestampUscita - found.datestamp) / 3600000);
 
         var risposta = {
             timestampArrivo: found.datestamp,
