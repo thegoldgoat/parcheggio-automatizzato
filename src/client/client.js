@@ -13,6 +13,12 @@ function AggiungiMacchina()
         async: false,
         success: function(msg) {
             alert(msg);
+        },
+        error: function(xhr) {
+            if(xhr.status == 200)
+                alert("Targa accettata");
+            else
+                alert("Targa rifiutata");
         }
     });
     $('form[name="formArrivo"]').trigger("reset");
