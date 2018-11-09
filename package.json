@@ -18,6 +18,7 @@
   "homepage": "https://github.com/thegoldgoat/parcheggio-automatizzato#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "mongoose": "^5.3.10"
+    "mongoose": "^5.3.10",
+    "package.json": "^2.0.1"
   }
 }
