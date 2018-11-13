@@ -4,6 +4,7 @@ const COSTO_ORARIO = 1.5;
 
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 mongoose.connect('mongodb://localhost:27017/test');
 var db = mongoose.connection;
@@ -28,6 +29,7 @@ var macchineParcheggiateModel = mongoose.model('macchineParcheggiate', macchineP
 
 var app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post('/arrivoMacchina', function (req, res) {
     console.log('arrivoMacchina: Targa ricevuta -> ', req.body);
