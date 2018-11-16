@@ -1,30 +1,31 @@
-const API_URL = "http://192.168.43.43:8080/";
+const API_URL = "http://localhost:8080/";
 
 function ArrivoMacchina() {
-    var socket = io(API_URL); 
-    socket.on('connect', function () {
+  var socket = io(API_URL);
+  socket.on('connect', function () {
     var form = $('form[name="formArrivo"]').serializeArray();
-    var data = JSON.stringify({ id_parcheggio: parseInt(form[0].value), targa: form[1].value });
+    var data = JSON.stringify({ id_parcheggio: form[0].value, targa: form[1].value });
     socket.emit("arrivoMacchina", data, function (xhr) {
-      if(xhr.status == 200)
-        console.log("Targa accettata");
+      if (xhr == 200)
+        alert("Targa accettata");
       else
-        console.log("Targa rifiutata");
+        alert("Targa rifiutata");
+      $('form[name="formArrivo"]').trigger("reset");
     });
   });
 }
 
 function UscitaMacchina() {
-    var socket = io(API_URL); 
-    socket.on('connect', function () {
-    var form = $('form[name="formArrivo"]').serializeArray();
-    var data = JSON.stringify({ id_parcheggio: parseInt(form[0].value), targa: form[1].value });
+  var socket = io(API_URL);
+  socket.on('connect', function () {
+    var form = $('form[name="formUscita"]').serializeArray();
+    var data = JSON.stringify({ id_parcheggio: form[0].value, targa: form[1].value });
     socket.emit("uscitaMacchina", data, function (data, xhr) {
-      if(xhr.status == 200)
-        console.log(JSON.stringify(data));
+      if (xhr == 200)
+        alert(data);
       else
-        console.log("Targa rifiutata");
+        alert("Targa rifiutata");
+      $('form[name="formUscita"]').trigger("reset");
     });
   });
-  $('form[name="formArrivo"]').trigger("reset");
 }

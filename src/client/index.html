@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="socketClient.js"></script>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <form method="POST" name="formArrivo">
         <input type="number" name="id_parcheggio" placeholder="ID parcheggio">
         <input type="text" name="targa" placeholder="Targa">
-        <button onclick="AggiungiMacchina(); return false;">Conferma</button>
+        <button onclick="ArrivoMacchina(); return false;">Conferma</button>
     </form>
     <br>
     <label>USCITA</label>
