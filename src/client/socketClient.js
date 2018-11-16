@@ -32,17 +32,19 @@ function UscitaMacchina() {
 }
 
 function Cripta(str, amount) {
-	if (amount < 0)
-		return Cripta(str, amount + 26);
-	var output = '';
-	for (var i = 0; i < str.length; i ++) {
-		var c = str[i];
-		if (c.match(/[a-z]/i)) {
-			var code = str.charCodeAt(i);
-			if ((code >= 65) && (code <= 90))
-				c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
-		}
-		output += c;
-	}
-	return output;
+  // if (amount < 0)
+  //   return Cripta(str, amount + 26);
+  var output = '';
+  var amountLetter = Math.abs(amount) % 26;
+  for (var i = 0; i < str.length; i++) {
+    var c = str[i];
+    var code = str.charCodeAt(i);
+    if (c.match(/[a-z]/i)) {
+      c = String.fromCharCode(((code - 65 + (amount < 0 ? amount + 26 : amount)) % 26) + 65);
+    } else if (c.match(/[0-9]/)) {
+      c = String.fromCharCode(((code - 48 + (amount < 0 ? amount + 10 : amount)) % 10) + 48);
+    }
+    output += c;
+  }
+  return output;
 };
