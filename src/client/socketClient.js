@@ -1,5 +1,5 @@
 const API_URL = "http://localhost:8080/";
-const KEY = 6;
+const KEY = 101;
 
 function ArrivoMacchina() {
   var socket = io(API_URL);

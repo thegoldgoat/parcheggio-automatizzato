@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="socketClient.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    <label>ARRIVO</label>
-    <form method="POST" name="formArrivo">
-        <input type="number" name="id_parcheggio" placeholder="ID parcheggio">
-        <input type="text" name="targa" placeholder="Targa">
-        <button onclick="ArrivoMacchina(); return false;">Conferma</button>
-    </form>
-    <br>
-    <label>USCITA</label>
-    <form method="POST" name="formUscita">
-        <input type="number" name="id_parcheggio" placeholder="ID parcheggio">
-        <input type="text" name="targa" placeholder="Targa">
-        <button onclick="UscitaMacchina(); return false;">Conferma</button>
-    </form>
+
+<body class="jumbotron">
+    <div>
+        <div class="card border-primary mb-3" style="max-width: 40rem; margin: 0 auto">
+            <div class="card-header">
+                <h4>Arrivo macchina</h4>
+            </div>
+            <div class="card-body">
+                <form name="formArrivo" method="POST">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="id_parcheggio">Id Parcheggio</label>
+                            <input type="number" class="form-control" name="id_parcheggio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="targa">Targa</label>
+                            <input type="text" class="form-control" name="targa">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" onclick="ArrivoMacchina(); return false;">Conferma</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="card border-primary mb-3" style="max-width: 40rem; margin: 0 auto">
+            <div class="card-header">
+                <h4>Uscita macchina</h4>
+            </div>
+            <div class="card-body">
+                <form name="formUscita" method="POST">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="id_parcheggio">Id Parcheggio</label>
+                            <input type="number" class="form-control" name="id_parcheggio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="targa">Targa</label>
+                            <input type="text" class="form-control" name="targa">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" onclick="UscitaMacchina(); return false;">Conferma</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
